@@ -8,9 +8,14 @@ namespace Properties5_5.Mocking
 {
     public class VideoService
     {
+        public IFileReader FileReader { get; set; }
+        public VideoService()
+        {
+            FileReader = new FileReader();
+        }
         public string ReadVideoTitle(IFileReader fileReader)
         {
-            var str = fileReader.Read("video.txt");
+            var str = FileReader.Read("video.txt");
             var video = JsonConvert.DeserializeObject<Video>(str);
             if (video == null)
                 return "Error parsing the video.";

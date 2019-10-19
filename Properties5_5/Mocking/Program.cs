@@ -9,6 +9,6 @@ namespace Properties5_5.Mocking
     public static void Main()
     {
         var service = new VideoService();
-        var title = service.ReadVideoTitle(new FileReader());
+        var title = service.ReadVideoTitle();
     }
 }
